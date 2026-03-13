@@ -3,173 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$NOORUNG - The Korean Hachiko - CTO ON SOLANA</title>
+    <title>$NOORUNG - The Korean Hachiko | 100% CTO</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Oswald:wght@500;700&display=swap');
         
-        /* General Styles */
-        body { font-family: 'Montserrat', sans-serif; background-color: #0d0d0d; color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
-        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        /* General Setup */
+        body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: #ffffff; margin: 0; padding: 0; overflow-x: hidden; }
+        h1, h2, h3, h4, h5 { font-family: 'Oswald', sans-serif; text-transform: uppercase; margin: 0; }
         
-        /* Hype Elements */
-        .text-flicker { animation: flicker 3s infinite; }
-        .diamond { color: #8e44ad; font-weight: 900; text-shadow: 0 0 10px rgba(142, 68, 173, 0.8); }
-        .solana { color: #00ffa3; text-shadow: 0 0 10px rgba(0, 255, 163, 0.8); }
-
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 4px #fff, 0 0 11px #f39c12, 0 0 19px #f39c12, 0 0 40px #f39c12, 0 0 80px #f39c12, 0 0 90px #f39c12; }
-            20%, 24%, 55% { text-shadow: none; }
+        /* Hype Animations & Colors */
+        .solana-green { color: #14F195; text-shadow: 0 0 10px rgba(20, 241, 149, 0.5); }
+        .cto-purple { color: #9945FF; }
+        .gold { color: #f1c40f; text-shadow: 0 0 8px rgba(241, 196, 15, 0.6); }
+        .red-alert { color: #ff4757; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(241, 196, 15, 0.5); }
+            50% { transform: scale(1.02); box-shadow: 0 0 30px rgba(241, 196, 15, 0.8); }
+            100% { transform: scale(1); box-shadow: 0 0 15px rgba(241, 196, 15, 0.5); }
         }
 
-        /* Hero / First Impression */
-        .hero { position: relative; background: radial-gradient(circle, #1a1a1a 0%, #000000 100%); padding: 100px 20px; text-align: center; border-bottom: 5px solid #f39c12; }
-        .hero h1 { font-size: 4rem; color: #f39c12; margin: 0; font-weight: 900; line-height: 1; }
-        .hero h2 { font-size: 1.5rem; color: #ecf0f1; font-weight: 400; margin-top: 15px; letter-spacing: 3px;}
-        .top-badge { display: inline-block; background-color: #e74c3c; color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 25px; box-shadow: 0 0 15px rgba(231, 76, 60, 0.6); }
+        /* Ticker Tape (Scrolling Text) */
+        .ticker-wrap { width: 100%; background: #14F195; color: #000; padding: 10px 0; overflow: hidden; font-weight: 900; font-size: 1.1rem; letter-spacing: 2px; }
+        .ticker { display: inline-block; white-space: nowrap; animation: ticker 20s linear infinite; }
+        @keyframes ticker { 0% { transform: translate3d(100%, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
-        /* Container & Layout */
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        /* CA Box - Critical Element */
-        .ca-container { background-color: #111; border: 3px dashed #f39c12; padding: 25px; text-align: center; border-radius: 15px; margin: 50px 0; box-shadow: 0 0 25px rgba(243, 156, 18, 0.4); }
-        .ca-title { color: #f39c12; font-weight: bold; margin-bottom: 15px; font-size: 1.5rem; }
-        .ca-address { font-family: monospace; font-size: 1.2rem; color: #fff; word-break: break-all; background: #000; padding: 15px; border-radius: 8px; border: 1px solid #333;}
-        
-        /* Aggressive Buy Buttons */
-        .btn-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
-        .btn { padding: 20px 40px; border-radius: 50px; font-weight: bold; text-decoration: none; color: white; font-size: 1.2rem; text-transform: uppercase; transition: transform 0.2s, box-shadow 0.2s; font-family: 'Oswald', sans-serif; }
-        .btn:hover { transform: scale(1.05); }
-        .btn-pump { background: linear-gradient(45deg, #2ecc71, #27ae60); box-shadow: 0 5px 20px rgba(46, 204, 113, 0.6); }
-        .btn-dex { background: linear-gradient(45deg, #34495e, #2c3e50); border: 1px solid #7f8c8d; box-shadow: 0 5px 15px rgba(52, 73, 94, 0.4); }
-        
-        /* Visual Hype Sections */
-        .hype-section { background: #1a1a1a; padding: 50px; border-radius: 20px; margin-top: 50px; border: 1px solid #333; position: relative; overflow: hidden;}
-        .hype-section h2 { text-align: center; color: #f39c12; font-size: 2.5rem; margin-bottom: 40px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
-        
-        /* Poster Collage Feeling - Text Cards */
-        .visual-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .hype-card { background: rgba(0,0,0,0.8); padding: 30px; border-radius: 15px; text-align: center; border-top: 5px solid #f39c12; transition: transform 0.3s; position: relative; border: 1px solid #333;}
-        .hype-card:hover { transform: translateY(-10px); }
-        .hype-card .icon { font-size: 3rem; color: #f39c12; margin-bottom: 20px; display: block;}
-        .hype-card h4 { font-size: 1.6rem; color: white; margin: 0 0 10px 0; }
-        .hype-card p { color: #aaa; font-size: 1rem; line-height: 1.6; margin: 0;}
-        
-        /* "THE LORE IS REAL" Narrative */
-        .lore-panel { background: linear-gradient(135deg, #222 0%, #0d0d0d 100%); padding: 40px; border-radius: 20px; margin-top: 50px; border: 1px solid #ffd700; position: relative; }
-        .lore-panel::before { content: '🐕'; font-size: 5rem; position: absolute; top: -30px; right: 20px; opacity: 0.1; }
-        .lore-panel h2 { color: #ffd700; text-align: center; margin-bottom: 30px; font-size: 2.2rem;}
-        .story-step { display: flex; align-items: flex-start; margin-bottom: 30px; border-left: 4px solid #ffd700; padding-left: 20px; }
-        .story-icon { font-size: 2.5rem; margin-right: 20px; flex-shrink: 0; }
-        .story-text h4 { margin: 0 0 5px 0; color: #fff; font-size: 1.3rem; }
-        .story-text p { margin: 0; color: #bbb; font-size: 1rem; line-height: 1.6; }
+        /* Hero Section */
+        .hero { background: radial-gradient(circle at center, #1a1500 0%, #050505 100%); padding: 80px 20px 60px; text-align: center; border-bottom: 3px solid #f1c40f; position: relative; }
+        .hero-badge { display: inline-block; background: #ff4757; color: white; padding: 8px 20px; border-radius: 50px; font-weight: 900; font-size: 1rem; margin-bottom: 20px; letter-spacing: 2px; box-shadow: 0 4px 15px rgba(255, 71, 87, 0.5); }
+        .hero h1 { font-size: 4.5rem; color: #f1c40f; font-weight: 900; line-height: 1; letter-spacing: 3px; text-shadow: 3px 3px 0 #c0392b, 6px 6px 15px rgba(241, 196, 15, 0.4); }
+        .hero h2 { font-size: 1.8rem; color: #ecf0f1; font-family: 'Montserrat', sans-serif; font-weight: 800; margin-top: 15px; }
+        .hero p.subtitle { font-size: 1.1rem; color: #aaa; max-width: 600px; margin: 15px auto; line-height: 1.5; }
 
-        /* Psychology Section */
-        .mentality-box { background: linear-gradient(45deg, #8e44ad 0%, #2ecc71 100%); padding: 50px; border-radius: 20px; text-align: center; margin-top: 60px; box-shadow: 0 10px 40px rgba(142, 68, 173, 0.5); position: relative; border: 2px solid white;}
-        .mentality-box h2 { font-size: 2.8rem; margin: 0 0 20px 0; color: white; text-shadow: 3px 3px 10px rgba(0,0,0,0.4); }
-        .mentality-box p { color: #f1f2f6; font-size: 1.2rem; line-height: 1.8; font-weight: bold; max-width: 800px; margin: 0 auto;}
-        .callout { display: block; background-color: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; margin-top: 25px; font-size: 1.4rem !important; color: #f1c40f !important; text-transform: uppercase;}
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-        /* Footer - Socials Only */
-        footer { text-align: center; margin: 80px 0 30px 0; border-top: 1px solid #333; padding-top: 30px; }
-        .social-link { display: inline-block; padding: 15px 35px; border-radius: 50px; background-color: white; color: black; font-weight: bold; text-decoration: none; font-size: 1.2rem; text-transform: uppercase; transition: transform 0.2s; font-family: 'Oswald', sans-serif; box-shadow: 0 5px 15px rgba(255,255,255,0.3); }
-        .social-link:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255,255,255,0.4); }
-        .social-link span { vertical-align: middle; margin-right: 10px; font-size: 1.4rem;}
+        /* Contract Address Box */
+        .ca-box { background: rgba(0,0,0,0.8); border: 2px solid #14F195; padding: 25px; border-radius: 15px; margin: 40px auto; max-width: 800px; text-align: center; box-shadow: 0 0 25px rgba(20, 241, 149, 0.2); }
+        .ca-title { color: #14F195; font-size: 1.3rem; margin-bottom: 10px; font-weight: 800; letter-spacing: 1px;}
+        .ca-string { font-family: monospace; font-size: 1.2rem; background: #111; padding: 15px; border-radius: 8px; word-break: break-all; color: #fff; border: 1px dashed #333; }
 
-        /* Mobile Optimization */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.1rem; }
-            .hype-section h2, .mentality-box h2 { font-size: 2rem; }
-            .btn { padding: 15px 25px; font-size: 1rem; width: 100%; text-align: center;}
-            .container { padding: 15px; }
-            .story-step { flex-direction: column; }
-            .story-icon { margin-right: 0; margin-bottom: 10px; font-size: 2rem;}
+        /* Action Buttons */
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+        .btn { padding: 18px 40px; border-radius: 50px; font-weight: 900; font-size: 1.3rem; text-decoration: none; text-transform: uppercase; transition: all 0.3s ease; display: flex; align-items: center; gap: 10px; }
+        .btn-buy { background: #14F195; color: #000; box-shadow: 0 0 20px rgba(20, 241, 149, 0.4); }
+        .btn-buy:hover { background: #0fe088; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(20, 241, 149, 0.6); }
+        .btn-chart { background: #222; color: #fff; border: 2px solid #555; }
+        .btn-chart:hover { background: #333; transform: translateY(-5px); border-color: #f1c40f; }
+
+        /* Infographic / Poster Style Cards */
+        .section-title { text-align: center; font-size: 3rem; color: #fff; margin: 80px 0 40px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
+        .section-title span { color: #f1c40f; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        /* Market Dynamics Cards */
+        .info-card { background: #111; border-radius: 20px; padding: 35px 25px; text-align: center; border-top: 5px solid #14F195; position: relative; overflow: hidden; border-bottom: 1px solid #222; border-right: 1px solid #222; border-left: 1px solid #222; }
+        .info-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(20,241,149,0.05) 0%, transparent 100%); pointer-events: none; }
+        .info-card .icon { font-size: 3.5rem; margin-bottom: 20px; display: block; }
+        .info-card h3 { font-size: 2rem; color: #fff; margin-bottom: 15px; }
+        .info-card p { color: #aaa; font-size: 1.1rem; line-height: 1.6; font-weight: 600; }
+        .info-card .highlight { color: #14F195; font-weight: 900; font-size: 1.3rem; }
+
+        /* The Lore / Story Timeline */
+        .lore-container { background: #0a0a0a; border: 2px solid #333; border-radius: 20px; padding: 40px; position: relative; }
+        .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .story-box { background: #151515; padding: 25px; border-radius: 15px; border-left: 5px solid #f1c40f; transition: transform 0.3s; }
+        .story-box:hover { transform: scale(1.03); background: #1a1a1a; }
+        .story-box h4 { color: #f1c40f; font-size: 1.5rem; margin-bottom: 10px; }
+        .story-box p { color: #ddd; line-height: 1.5; font-size: 1rem; margin: 0; }
+        .story-box .stats { display: inline-block; background: #333; padding: 5px 10px; border-radius: 5px; font-size: 0.85rem; color: #14F195; margin-top: 15px; font-weight: bold;}
+
+        /* Investor Psychology Box (The Real Hype) */
+        .psycho-box { background: linear-gradient(135deg, #2c3e50 0%, #000000 100%); padding: 60px 40px; border-radius: 25px; text-align: center; margin-top: 80px; border: 2px solid #f1c40f; animation: pulse 3s infinite; }
+        .psycho-box h2 { font-size: 3.5rem; color: #fff; margin-bottom: 20px; text-shadow: 2px 2px 0 #000; }
+        .psycho-box .diamond-text { font-size: 2rem; color: #f1c40f; font-weight: 900; margin: 20px 0; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 10px; display: inline-block; text-transform: uppercase;}
+        .psycho-box p { color: #ecf0f1; font-size: 1.3rem; line-height: 1.8; max-width: 800px; margin: 0 auto; font-weight: 600;}
+        .psycho-box .subtext { color: #aaa; font-size: 1rem; margin-top: 20px; font-weight: 400;}
+
+        /* Footer */
+        footer { text-align: center; padding: 60px 20px 40px; border-top: 1px solid #222; margin-top: 80px; background: #030303; }
+        .social-btn { display: inline-block; background: #fff; color: #000; padding: 15px 40px; border-radius: 50px; font-weight: 900; font-size: 1.3rem; text-decoration: none; text-transform: uppercase; font-family: 'Oswald', sans-serif; transition: all 0.3s ease; margin-bottom: 30px; }
+        .social-btn:hover { background: #f1c40f; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(241, 196, 15, 0.4); }
+        .footer-text { font-size: 1.2rem; font-weight: 800; color: #555; letter-spacing: 1px; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 1.4rem; }
+            .section-title { font-size: 2.2rem; }
+            .ca-string { font-size: 0.9rem; }
+            .psycho-box { padding: 40px 20px; }
+            .psycho-box h2 { font-size: 2.2rem; }
+            .psycho-box .diamond-text { font-size: 1.3rem; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
+    <div class="ticker-wrap">
+        <div class="ticker">
+            🚀 $NOORUNG IS TRENDING 🚀 100% COMMUNITY TAKEOVER 🚀 THE KOREAN HACHIKO 🚀 LIQUIDITY MIGRATED 🚀 BILLIONS OF GLOBAL VIEWS 🚀 NO DEV WALLETS 🚀 DIAMOND HANDS ONLY 🚀
+        </div>
+    </div>
+
     <div class="hero">
-        <div class="top-badge">🐕 THE LORE IS REAL</div>
-        <h1 class="text-flicker">$NOORUNG</h1>
-        <h2>A True Story of Absolute <span class="diamond">Diamond-Handed</span> Loyalty</h2>
+        <div class="hero-badge">A TRUE STORY OF ABSOLUTE LOYALTY</div>
+        <h1>$NOORUNG</h1>
+        <h2>THE DOG OF MARADO'S ROCK</h2>
+        <p class="subtitle">He waited day after day, over a year, in winter, sun, and storm. Now, his legacy lives on the Solana blockchain.</p>
         
         <div class="container">
-            <div class="ca-container">
-                <div class="ca-title text-flicker">OFFICIAL CONTRACT ADDRESS (CA)</div>
-                <div class="ca-address">5Vt84ukEKHuxYA7wjH3PDwCzTGumPS7MDNGX4cFLpump</div>
+            <div class="ca-box">
+                <div class="ca-title">OFFICIAL SOLANA CONTRACT (CA)</div>
+                <div class="ca-string">5Vt84ukEKHuxYA7wjH3PDwCzTGumPS7MDNGX4cFLpump</div>
             </div>
 
-            <div class="btn-container">
-                <a href="https://pump.fun/5Vt84ukEKHuxYA7wjH3PDwCzTGumPS7MDNGX4cFLpump" class="btn btn-pump" target="_blank">💊 Buy on Pump.fun</a>
-                <a href="https://dexscreener.com/solana/5Vt84ukEKHuxYA7wjH3PDwCzTGumPS7MDNGX4cFLpump" class="btn btn-dex" target="_blank">🦅 Dexscreener</a>
+            <div class="btn-group">
+                <a href="https://pump.fun/5Vt84ukEKHuxYA7wjH3PDwCzTGumPS7MDNGX4cFLpump" target="_blank" class="btn btn-buy">💊 BUY ON PUMP.FUN</a>
+                <a href="https://dexscreener.com/solana/5Vt84ukEKHuxYA7wjH3PDwCzTGumPS7MDNGX4cFLpump" target="_blank" class="btn btn-chart">🦅 VIEW CHART</a>
             </div>
         </div>
     </div>
 
     <div class="container">
         
-        <div class="hype-section">
-            <h2>UNSTOPPABLE VIRALITY</h2>
-            <div class="visual-grid">
-                <div class="hype-card">
-                    <span class="icon">📈</span>
-                    <h4>15M+ Views</h4>
-                    <p>Featured on major TV channels. Millions watched and cried.</p>
+        <h2 class="section-title">LORE-DRIVEN <span>MARKET DYNAMICS</span></h2>
+        <div class="grid-3">
+            <div class="info-card">
+                <span class="icon">🌏</span>
+                <h3>9.5/10 VIRALITY</h3>
+                <p>Top-Tier trending on Weibo, Douyin, and Naver. From a local story to a <span class="highlight">Global Cultural Symbol.</span></p>
+            </div>
+            <div class="info-card">
+                <span class="icon">📈</span>
+                <h3>MASSIVE POTENTIAL</h3>
+                <p>Impressive recent runs reported (44x - 133x early gains). Current consolidation is viewed as a <span class="highlight">Launchpad, not a top.</span></p>
+            </div>
+            <div class="info-card">
+                <span class="icon">📺</span>
+                <h3>15M+ VIEWS</h3>
+                <p>Featured on major networks like SBS 'TV Animal Farm' & China's CCTV. The internet sensation that <span class="highlight">melted Asia's heart.</span></p>
+            </div>
+        </div>
+
+        <h2 class="section-title">THE LORE <span>IS REAL</span></h2>
+        <div class="lore-container">
+            <div class="story-grid">
+                <div class="story-box">
+                    <h4>1. THE BOND</h4>
+                    <p>An elderly fisherman and his wife cared for Noorung in Marado Island. In 2017, a sudden serious illness forced them to leave.</p>
                 </div>
-                <div class="hype-card">
-                    <span class="icon">🏆</span>
-                    <h4>9.5/10 Virality</h4>
-                    <p>Cultural phenomenon in Asia. The most loyal dog in history.</p>
+                <div class="story-box">
+                    <h4>2. THE VIGIL</h4>
+                    <p>Believing they would return, he guarded the dangerous seaside rocks day after day, braving storms, winter, and hunger for over a year.</p>
+                    <span class="stats">Waited 365+ Days</span>
                 </div>
-                <div class="hype-card">
-                    <span class="icon">💪</span>
-                    <h4>CTO POWER</h4>
-                    <p>100% Community Takeover. We are driving the lore ourselves.</p>
+                <div class="story-box">
+                    <h4>3. VIRAL FAME</h4>
+                    <p>His unwavering loyalty became an international sensation, inspiring millions and becoming a symbol of pure spirit across nations.</p>
+                    <span class="stats">Multi-Platform Dominance</span>
+                </div>
+                <div class="story-box">
+                    <h4>4. HAPPY ENDING</h4>
+                    <p>Collaborative rescue efforts saved him. Diagnosed and treated, he was adopted by a kind man and now lives happily.</p>
                 </div>
             </div>
         </div>
 
-        <div class="lore-panel">
-            <h2>THE LORE IS REAL</h2>
-            
-            <div class="story-step">
-                <div class="story-icon">🧑‍🤝‍🧑</div>
-                <div class="story-text">
-                    <h4>The Bond</h4>
-                    <p>An elderly couple cared for Noorung in Marado Island. In 2017, health issues forced them to leave.</p>
-                </div>
+        <div class="psycho-box">
+            <h2>THE $NOORUNG PRINCIPLE</h2>
+            <p>Community mirrors holder mentality. The story of Noorung isn't just a meme—it's a symbol of unmatched persistence.</p>
+            <div class="diamond-text">
+                IF A DOG CAN WAIT 1 YEAR IN A STORM...<br>
+                YOU CAN DIAMOND-HAND FOR WEEKS!
             </div>
-            <div class="story-step">
-                <div class="story-icon">⛈️</div>
-                <div class="story-text">
-                    <h4>The Year-Long Vigil</h4>
-                    <p>Believing they would return, Noorung waited on the dangerous rocks braving storms, winter, and hunger.</p>
-                </div>
-            </div>
-            <div class="story-step">
-                <div class="story-icon">Adopted</div>
-                <div class="story-text">
-                    <h4>The New Beginning</h4>
-                    <p>Rescued and treated. Now adopted and happy, symbolizing hope and persistence.</p>
-                </div>
-            </div>
+            <p>Daily culture-building and raids keep momentum alive. Persistence drives investment decisions. This is a cult of conviction.</p>
+            <div class="subtext">100% BONDING CURVE COMPLETED • LIQUIDITY MIGRATED</div>
         </div>
 
-        <div class="mentality-box">
-            <h2>💎 THE $NOORUNG PRINCIPLE 💎</h2>
-            <p>If a dog can wait a FULL YEAR through brutal storms on dangerous rocks...</p>
-            <p class="callout">You can "Diamond-Hand" for weeks!</p>
-            <p>Community mirrors holder mentality. This isn’t a meme. It’s a cult of conviction.</p>
-        </div>
-
-        <footer>
-            <a href="https://x.com/i/communities/2032246889676984333" class="social-link" target="_blank">
-                <span>🐦</span> X (Twitter) Community
-            </a>
-            <p style="color: #333; margin-top: 30px; font-size: 0.9rem;">$NOORUNG - CTO ON <span class="solana">SOLANA</span> SUMMER 2024</p>
-        </footer>
     </div>
+
+    <footer>
+        <a href="https://x.com/i/communities/2032246889676984333" target="_blank" class="social-btn">
+            🐦 JOIN X (TWITTER) COMMUNITY
+        </a>
+        <div class="footer-text">
+            $NOORUNG • 100% CTO ON <span class="solana-green">SOLANA</span>
+        </div>
+    </footer>
 
 </body>
 </html>
